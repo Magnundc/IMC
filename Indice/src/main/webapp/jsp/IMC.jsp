@@ -24,6 +24,41 @@
 			type="text" name="altura"> <br> Peso: <input type="text"
 			name="peso"> <br> <input type="submit">
 	</form>
+	<script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
+	<!-- This is a very simple parallax effect achieved by simple CSS 3 multiple backgrounds, made by http://twitter.com/msurguy -->
+
+	<div class="container">
+		<div class="row vertical-offset-100">
+			<div class="col-md-4 col-md-offset-4">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class="panel-title">CÃ¡lculo IMC</h3>
+					</div>
+					<div class="panel-body">
+						<form accept-charset="UTF-8" role="form">
+							<fieldset>
+								<div class="form-group">
+									<input class="form-control" placeholder="nome" name="nome"
+										type="text">
+								</div>
+								
+								<div class="form-group">
+									<input class="form-control" placeholder="altura" name="altura"
+										type="text">
+								</div>
+								<div class="form-group">
+									<input class="form-control" placeholder="altura" name="altura"
+										type="text">
+								</div>
+								<input class="btn btn-lg btn-success btn-block" type="submit"
+									value="Calcular">
+							</fieldset>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	RESULTADO:
 	<%
 		String Nome = request.getParameter("nome");
@@ -37,19 +72,19 @@
 		Float Peso = Float.parseFloat(PamPeso);
 		Float Imc = Peso / (Altura * Altura);
 		if (Imc < 17)
-			out.print(Nome + " é Desnutrido");
+			out.print(Nome + " Ã© Desnutrido");
 		if (Imc > 17 && Imc < 18.49)
-			out.print(Nome + " é Magrelo");
+			out.print(Nome + " Ã© Magrelo");
 		if (Imc > 18.49 && Imc < 24.99)
-			out.print(Nome + " é Normal");
+			out.print(Nome + " Ã© Normal");
 		if (Imc > 24.99 && Imc < 29.99)
-			out.print(Nome + " é Gordo");
+			out.print(Nome + " Ã© Gordo");
 		if (Imc > 29.99 && Imc < 34.99)
-			out.print(Nome + " é Gordo Baleia");
+			out.print(Nome + " Ã© Gordo Baleia");
 		if (Imc > 34.99 && Imc < 39.99)
-			out.print(Nome + " é Gordo Baleia Saco de Areia");
+			out.print(Nome + " Ã© Gordo Baleia Saco de Areia");
 		if (Imc > 39.99)
-			out.print(Nome + " a terra dira sob você");
+			out.print(Nome + " a terra dira sob vocÃª");
 	%>
 	<br>
 	<%
@@ -60,7 +95,8 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 
 </html>
